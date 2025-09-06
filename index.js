@@ -13,7 +13,7 @@ connectDB();
 
 const app = express();
 app.use(cors({
-    origin: "http://https://employee-frontend-sage-sigma.vercel.app",
+    origin: "https://employee-frontend-sage-sigma.vercel.app",
     credentials: true
 }));
 app.use(express.json());
