@@ -8,8 +8,6 @@ import leaveRouter from "./routes/leave.js";
 import settingRouter from "./routes/setting.js";
 import connectDB from "./db/db.js";
 import dashboardRouter from "./routes/dashboard.js";
-connectDB();
-
 
 const app = express();
 app.use(cors({
@@ -28,6 +26,7 @@ app.use("/api/leave", leaveRouter);
 app.use("/api/setting", settingRouter);
 app.use("/api/dashboard", dashboardRouter);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT,async () => {
+    await connectDB();
     console.log("Server is running on port " + process.env.PORT);
 });
