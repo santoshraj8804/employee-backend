@@ -12,7 +12,10 @@ connectDB();
 
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: "http://https://employee-frontend-sage-sigma.vercel.app",
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.static("public/uploads"));
 //app.use(express.urlencoded({ extended: true}));
