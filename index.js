@@ -11,12 +11,12 @@ import dashboardRouter from "./routes/dashboard.js";
 
 const app = express();
 app.use(cors({
-    origin: "https://employee-frontend-sage-sigma.vercel.app",
+    origin: ["http://localhost:5173","https://employee-frontend-sage-sigma.vercel.app"],
     credentials: true
 }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));    
 app.use(express.static("public/uploads"));
-//app.use(express.urlencoded({ extended: true}));
 
 app.use("/api/auth", authRouter);
 app.use("/api/department", departmentRouter);
